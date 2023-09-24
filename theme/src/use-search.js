@@ -80,7 +80,12 @@ function useSearch() {
   const combobox = useCombobox({
     items: items || [],
     onInputValueChange: ({inputValue}) => setQuery(inputValue),
-    onSelectedItemChange: ({selectedItem}) => navigate(selectedItem.path),
+    onSelectedItemChange: ({selectedItem}) => {
+      if (selectedItem) {
+        combobox.reset()
+        navigate(selectedItem.path)
+      }
+    },
     itemToString: item => (item ? item.title : ''),
     stateReducer: (state, {type, changes}) => {
       switch (type) {
