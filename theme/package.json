@@ -38,7 +38,7 @@
     "copy-to-clipboard": "^3.3.3",
     "date-fns": "^2.29.3",
     "details-element-polyfill": "^2.4.0",
-    "downshift": "^3.4.8",
+    "downshift": "^6.1.12",
     "find-up": "^6.3.0",
     "framer-motion": "^3.10.6",
     "fuse.js": "^3.6.1",
@@ -80,6 +80,7 @@
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-primer-react": "1.0.1",
     "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.3.1",
     "prettier": "^2.8.3"
