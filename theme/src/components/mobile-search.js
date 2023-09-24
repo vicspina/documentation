@@ -21,7 +21,7 @@ function MobileSearch({onDismiss}) {
 
   return (
     <FocusOn returnFocus={true} onEscapeKey={handleDismiss}>
-      <Fixed top={0} left={0} right={0} bottom={0} zIndex={1}>
+      <Fixed top="10px" left={0} right={0} bottom={0} zIndex={1}>
         <Absolute
           as={motion.div}
           initial={{opacity: 0}}
@@ -60,22 +60,20 @@ function MobileSearch({onDismiss}) {
               <XIcon />
             </DarkButton>
           </Flex>
-          {isOpen && results ? (
-            <Flex
-              {...getMenuProps({
-                bg: 'white',
-                py: 1,
-                flexDirection: 'column',
-                flex: '1 1 auto',
-                style: {
-                  overflow: 'auto',
-                  WebkitOverflowScrolling: 'touch',
-                },
-              })}
-            >
-              <SearchResults {...{results, getItemProps, highlightedIndex}} />
-            </Flex>
-          ) : null}
+          <Flex
+            {...getMenuProps({
+              bg: 'white',
+              py: isOpen && results ? 1 : 0,
+              flexDirection: 'column',
+              flex: '1 1 auto',
+              style: {
+                overflow: 'auto',
+                WebkitOverflowScrolling: 'touch',
+              },
+            })}
+          >
+            {isOpen && results ? <SearchResults {...{results, getItemProps, highlightedIndex}} /> : null}
+          </Flex>
         </Flex>
       </Fixed>
     </FocusOn>
